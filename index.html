@@ -4,35 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link rel="stylesheet" href="./assets/css/style.css" />
 
     <title>Doggy GPS</title>
 </head>
 <body>
-    <header>
-        <h1>Doggy GPS</h1>
-    </header>
-    <div> 
-        <input type="text" id="search"/>
-        <button id="searchBtn">Search</button>
-    </div>
-
-    <div>
-        <h2>placeholder for dog img/attributes</h2>
-        <ul></ul>
-    </div>
-
-    <div>
-        <h2>find local shelter placeholder</h2>
-    </div>
-
-    <div>
-        <h2>map of the shelter placeholder</h2>
-    </div>
-
-    <footer>footer place holder</footer>
+    <!-- navbar area -->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">DOGGY GPS</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="">Home</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
     
+    <!--main body -->
+    <div class="row blue lighten-5">
+        <!-- search field -->
+        <div class="col s12 m4 l3 blue lighten-5"> 
+            <div class="input-field col s12 blue lighten-5">
+                <select>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+                <label>Select Your Dog Breed</label>
+            </div>
+        </div>
+        <!-- dog display card -->
+        <div class="col s12 m8 l9 blue lighten-4 center-align"> 
+            <div class="row">
+                <div class="col s12 m7">
+                     <div class="card">
+                        <div class="card-image">
+                            <img src="./assets/images/placeholder.jpg">
+                            <span class="card-title">DOG NAME</span>
+                        </div>
+                        <div class="card-content">
+                            <p>This card can hold the dogs pictures, discription, etc. 
+                                The link cound take users to the "find dogs in a shelter area?"
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">Adopt a Dog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        
+
+       
+    
+    
+        
+
+    
+    
+    
+   
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="./assets/js/materialize.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
-<script src="./assets/js/javascript.js"></script>
+
 </html>
