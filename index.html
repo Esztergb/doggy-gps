@@ -13,22 +13,23 @@
 </head>
 <body>
     <!-- navbar area -->
-    <nav>
-        <div class="nav-wrapper">
-            <div class="container">
-            <a href="#" class="brand-logo">DOGGY GPS</a>
+    <nav class="nav" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">Doggy GPS (logo)</a>
+            
+
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="">Home</a></li>
+                <li><a href="./start.html">Home</a></li>
                 <li><a href="">About Us</a></li>
                 <li><a href="">Contact</a></li>
             </ul>
-            </div>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
-    </nav>
-
-    <div class="container lime lighten-4">
+     </nav>
+    
+    <div class="container">
         <div id="firstrow"class="row center align">
-            <div class="leftside col s3 blue lighten-1">
+            <div class="leftside col s3">
                 <div class="input-field col s12">
                     <select multiple>
                         <option value="" disabled selected>Choose your dog</option>
@@ -39,37 +40,38 @@
                 </div>
             </div>
 
-            <div class="rightside col s9 blue lighten-2">
+            <div class="rightside col s9">
                 <h2>section 2</h2>
+                <p>maybe a serch card could load here</p>
             </div>
         </div>
 
         <div id="secondrow" class="row center align lime lighten-5">
-            <div class="cardcont col s3 blue lighten-3">
-                               
-                <article class="card">
-                    <!-- <img class="project-image-main" src="./assets/images/placeholder.jpg" alt="Project one Image"/> -->
+            <div class="cardcont col s3">
+                <p>section 3</p>            
+                <!-- <article class="card">
+                    <img class="project-image-main" src="./assets/images/placeholder.jpg" alt="Project one Image"/>
                     <h5>Dog Breed</h5   >
                     <hr/> 
                     <p class="subtext">Dog Info</p>
                     
-                </article>
+                </article> -->
             
             </div>
-            <div class="cardcont col s3 blue lighten-4">
+            <div class="cardcont col s3">
                 <p>section 4</p>
             </div>
-            <div class="cardcont col s3 blue lighten-5">
+            <div class="cardcont col s3">
                 <p>section 5</p>
             </div>
-            <div class="cardcont col s3 blue lighten-6">
+            <div class="cardcont col s3">
                 <p>section 6</p>
             </div>
         </div>
     </div>
 
     <footer>
-        <div id="footersection" class="lime lighten-4 center align">
+        <div id="footersection" class="foot center align">
             <div class="container">
             <p>This is a footer</p>
             </div>
