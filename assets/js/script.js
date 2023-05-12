@@ -22,19 +22,19 @@ $(document).ready(function () {
 //Sample Request URL: https://api.api-ninjas.com/v1/dogs?name=
 
 //JavaScript code example with ajax:
-var name = "golden retriever";
-$.ajax({
-  method: "GET",
-  url: "https://api.api-ninjas.com/v1/dogs?name=" + name,
-  headers: { "X-Api-Key": "C5lDHrdwlk1HHbRJNwSU5w==txzH0pzoH7aGus9J" },
-  contentType: "application/json",
-  success: function (result) {
-    console.log(result);
-  },
-  error: function ajaxError(jqXHR) {
-    console.error("Error: ", jqXHR.responseText);
-  },
-});
+// var name = "golden retriever";
+// $.ajax({
+//   method: "GET",
+//   url: "https://api.api-ninjas.com/v1/dogs?name=" + name,
+//   headers: { "X-Api-Key": "C5lDHrdwlk1HHbRJNwSU5w==txzH0pzoH7aGus9J" },
+//   contentType: "application/json",
+//   success: function (result) {
+//     console.log(result);
+//   },
+//   error: function ajaxError(jqXHR) {
+//     console.error("Error: ", jqXHR.responseText);
+//   },
+// });
 
 
 //=========================================================
