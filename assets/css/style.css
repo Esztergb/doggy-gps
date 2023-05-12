@@ -53,5 +53,9 @@ body{
     height: 150px;
     margin: 10px;
     border-radius: 5px;
-    box-shadow: 3px 3px 15px goldenrod);
+    box-shadow: 3px 3px 15px goldenrod;
+}
+
+#searchInput {
+    color: var(--dark-brown)
 }
