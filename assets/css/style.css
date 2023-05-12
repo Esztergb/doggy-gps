@@ -1,10 +1,9 @@
 /*color chart*/
 :root {
     --blue: #b1c5c3;
-    --light-blue: #cae5e2;
-    --dark-blue: #79a29e;
+    --light-blue: #bec9c8;
+    --dark-blue: #ced1d1;
     --beige: #e9e2d7;
-    --ligh-brown: #e1b894;
     --mid-brown: #a1887f;
     --dark-brown: #704523;
     --orange: #ff9800;
@@ -16,7 +15,7 @@ body{
     color: var(--dark-brown);
 }
 .nav{
-    background-color: var(--dark-blue);
+    background-color: var(--blue);
 }
 
 .foot{
@@ -29,7 +28,7 @@ body{
 }
 
 .rightside{
-    background-color: var(--blue);
+    background-color: var(--dark-blue);
 }
 
 .cardone{
@@ -37,7 +36,7 @@ body{
 }
 
 .cardtwo{
-    background-color: var(--blue);
+    background-color: var(--dark-blue);
     color: var(--dark-brown);
     justify-content: center;
 }
