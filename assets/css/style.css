@@ -1,6 +1,7 @@
 /*color chart*/
 :root {
-    --blue: #b1c5c3;
+    /* --blue: #b1c5c3; */
+    --blue: #90b3b0;
     --light-blue: #bec9c8;
     --lighter-blue: #ced1d1;
     --beige: #e9e2d7;
@@ -11,35 +12,41 @@
 
 body{
     background-color: var(--beige);
-    background-image: url("../Images/back4.jpg");
-    background-size: cover;
-    height: 100vh;
+    /* background-image: url("../Images/back4.jpg");
+    background-size: cover; */
+    /* height: 100vh; */
 }
 
 .nav{
     background-color: var(--blue);
 }
 
-.foot{
-    background-color: var(--mid-brown);
+.material-icons, .link{
     color: var(--beige);
 }
 
 .leftside{
     background-color: var(--light-blue);
+    /* opacity: 0.95; */
 }
 
 .rightside{
     background-color: var(--lighter-blue);
+    color: var(--dark-brown);
+    /* opacity: 0.97; */
 }
 
 .cardone{
     background-color: var(--light-blue);
+    color: var(--dark-brown);
+    /* opacity: 0.95; */
+    justify-content: center;
 }
 
 .cardtwo{
     background-color: var(--lighter-blue);
     color: var(--dark-brown);
+    /* opacity: 0.97; */
     justify-content: center;
 }
 
@@ -65,4 +72,9 @@ body{
 .dog-image {
     width: auto;
     max-height: 70%;
+}
+
+.foot{
+    background-color: var(--mid-brown);
+    color: var(--beige);
 }
