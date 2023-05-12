@@ -2,18 +2,20 @@
 :root {
     --blue: #b1c5c3;
     --light-blue: #bec9c8;
-    --dark-blue: #ced1d1;
+    --lighter-blue: #ced1d1;
     --beige: #e9e2d7;
     --mid-brown: #a1887f;
     --dark-brown: #704523;
     --orange: #ff9800;
-    
 }
 
 body{
     background-color: var(--beige);
-    color: var(--dark-brown);
+    background-image: url("../Images/back4.jpg");
+    background-size: cover;
+    height: 100vh;
 }
+
 .nav{
     background-color: var(--blue);
 }
@@ -28,7 +30,7 @@ body{
 }
 
 .rightside{
-    background-color: var(--dark-blue);
+    background-color: var(--lighter-blue);
 }
 
 .cardone{
@@ -36,9 +38,15 @@ body{
 }
 
 .cardtwo{
-    background-color: var(--dark-blue);
+    background-color: var(--lighter-blue);
     color: var(--dark-brown);
     justify-content: center;
+}
+
+#firstrow, #secondrow{
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 
+    0 3px 1px -2px rgba(0,0,0,0.12), 
+    0 1px 5px 0 rgba(0,0,0,0.2);
 }
 
 #firstrow, .leftside, .rightside{
