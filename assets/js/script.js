@@ -41,6 +41,8 @@ $.ajax({
 var userInput = $("#searchInput");
 var testButton = $("#testBtn");
 
+// var createEl = $("#appendImg").append("<image src='./assets/images/placeholder.jpg' id='dogImg' class='dog-image'></image>");
+
 testButton.on("click", function() {
   var dogName = userInput.val();
 
@@ -51,6 +53,12 @@ testButton.on("click", function() {
     contentType: "application/json",
     success: function (result) {
       console.log(result);
+      
+      var dogImage = document.querySelector("#dogImg");
+      dogImgLink = result[0].image_link;
+      // var createEl = $("#appendImg").append(`<image src=${dogImage} id='dogImg' class='dog-image'></image>`);
+      dogImage.setAttribute("src", dogImgLink)
+      console.log('image', result[0].image_link);
     },
     error: function ajaxError(jqXHR) {
       console.error("Error: ", jqXHR.responseText);
