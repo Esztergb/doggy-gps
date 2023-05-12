@@ -55,3 +55,8 @@ body{
     border-radius: 5px;
     box-shadow: 3px 3px 15px goldenrod;
 }
+
+.dog-image {
+    width: auto;
+    max-height: 70%;
+}
