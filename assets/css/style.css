@@ -1,6 +1,8 @@
 /*color chart*/
 :root {
     --blue: #b1c5c3;
+    --light-blue: #cae5e2;
+    --dark-blue: #79a29e;
     --beige: #e9e2d7;
     --ligh-brown: #e1b894;
     --mid-brown: #a1887f;
@@ -8,13 +10,13 @@
     --orange: #ff9800;
     
 }
-/**/
+
 body{
     background-color: var(--beige);
     color: var(--dark-brown);
 }
 .nav{
-    background-color: var(--blue);
+    background-color: var(--dark-blue);
 }
 
 .foot{
@@ -22,38 +24,35 @@ body{
     color: var(--beige);
 }
 
-.cardcont{
+.leftside{
+    background-color: var(--light-blue);
+}
+
+.rightside{
+    background-color: var(--blue);
+}
+
+.cardone{
+    background-color: var(--light-blue);
+}
+
+.cardtwo{
     background-color: var(--blue);
     color: var(--dark-brown);
+    justify-content: center;
 }
 
 #firstrow, .leftside, .rightside{
     height: 400px; /*remove ones design finalized*/
-}
+} 
 
-#secondrow, .cardcont{
+#secondrow, .cardone, .cardtwo{
     height: 200px; /*remove ones design finalized*/
     
 }
 
 #footersection{
     height: 200px; /*remove ones design finalized*/
-}
-
-.cardcont{
-    justify-content: center;
-}
-
-.card {
-    background-color: grey;
-    color: var(white);
-    position: relative;
-    flex: 1;
-    max-width: 300px;
-    height: 150px;
-    margin: 10px;
-    border-radius: 5px;
-    box-shadow: 3px 3px 15px goldenrod;
 }
 
 .dog-image {

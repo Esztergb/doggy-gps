@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="./assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
 
     <title>Doggy GPS</title>
@@ -20,8 +20,8 @@
 
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="./index.html">Home</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="./index.html">About Us</a></li>
+                <li><a href=".">Contact</a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
@@ -33,39 +33,32 @@
                 <div class="input-field col s">
                     <input placeholder="Enter Dog Breed" id="searchInput" type="text" class="search-input">
                     <button id="testBtn">Test Button</button>
-                    <label for="first_name"></label>
                   </div>
             </div>
 
             <div class="rightside col s9">
                 <!-- <div class="dog-image"> -->
-                <h2 id="appendImg">section 2</h2>
+                <h3 id="appendImg">Dog Name</h3>
                 <image src="./assets/images/placeholder.jpg" id="dogImg" class="dog-image"></image>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div id="secondrow" class="row center align lime lighten-5">
-            <div class="cardcont col s3">
-                <p>section 3</p>            
-                <!-- <article class="card">
-                    <img class="project-image-main" src="./assets/images/placeholder.jpg" alt="Project one Image"/>
-                    <h5>Dog Breed</h5   >
-                    <hr/> 
-                    <p class="subtext">Dog Info</p>
-                    
-                </article> -->
+    <div class="container">
+        <div id="secondrow" class="row center align">
+            <div class="cardone col s3">
+                <p>test:search area for second API</p>
+                <div class="input-field col s">
+                    <input placeholder="search" id="searchInput" type="text" class="petfinder">
+                    <button id="petfinderbtn">Find</button>
+                </div>            
+            </div>
             
-            </div>
-            <div class="cardcont col s3">
-                <p>section 4</p>
-            </div>
-            <div class="cardcont col s3">
-                <p>section 5</p>
-            </div>
-            <div class="cardcont col s3">
-                <p>section 6</p>
-            </div>
+            <div class="cardtwo col s9">
+                <p>dog atributes to go here</p>
+                
+            </div>                  
         </div>
     </div>
 
@@ -78,8 +71,8 @@
     </footer>
 
     <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="./assets/js/materialize.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
