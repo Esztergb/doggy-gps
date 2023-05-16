@@ -39,7 +39,16 @@ testButton.on("click", function () {
       dogImgLink = result[0].image_link;
       // var createEl = $("#appendImg").append(`<image src=${dogImage} id='dogImg' class='dog-image'></image>`);
       dogImage.setAttribute("src", dogImgLink)
+
       console.log('image', result[0].image_link);
+        var attOne = document.getElementById("att1");
+        var attTwo = document.getElementById("att2");
+        var attThree = document.getElementById("att3");
+        var attFour = document.getElementById("att4");
+        attOne.textContent = result[0].barking;
+        attTwo.textContent = result[0].energy;
+        attThree.textContent = result[0].shedding;
+        attFour.textContent = result[0].trainability;
     },
     error: function ajaxError(jqXHR) {
       console.error("Error: ", jqXHR.responseText);
@@ -137,7 +146,6 @@ var makeCall = function () {
 makeCall();
 btn.addEventListener('click', makeCall, false);
 
-  
 
 
 
