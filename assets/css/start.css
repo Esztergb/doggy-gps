@@ -1,5 +1,5 @@
 :root {
-    --blue: #b1c5c3;
+    --blue: #90b3b0;
     --beige: #e9e2d7;
     --ligh-brown: #e1b894;
     --mid-brown: #a1887f ;
@@ -9,10 +9,16 @@
 
 body{
     background-color: var(--beige);
+    /* background-image: url("../Images/back4.jpg");
+    background-size: cover; */
     color: var(--dark-brown);
 }
 .nav{
     background-color: var(--blue);
+}
+
+.logo, .link{
+    color: var(--beige);
 }
 
 .foot{
