@@ -130,7 +130,7 @@ var makeCall = function () {
     return;
   }
   //otherwise get pets
-  console.log('from cache');
+  // console.log('from cache');
   getPets
 };
 
