@@ -12,16 +12,16 @@
 
 body{
     background-color: var(--beige);
-    /* background-image: url("../Images/back4.jpg");
-    background-size: cover; */
-    /* height: 100vh; */
+    /*background-image: url("../Images/back4.jpg");
+    background-size: cover;*/
+    /* height: 100vh;*/
 }
 
 .nav{
     background-color: var(--blue);
 }
 
-.material-icons, .link{
+.logo, .link{
     color: var(--beige);
 }
 

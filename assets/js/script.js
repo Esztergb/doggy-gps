@@ -31,6 +31,10 @@ testButton.on("click", function () {
     success: function (result) {
       console.log(result);
 
+      var dogBreedName = document.querySelector("h3");
+      dogBreedName.textContent = result[0].name;
+      dogBreedName.setAttribute("name", dogBreedName)
+
       var dogImage = document.querySelector("#dogImg");
       dogImgLink = result[0].image_link;
       // var createEl = $("#appendImg").append(`<image src=${dogImage} id='dogImg' class='dog-image'></image>`);
@@ -135,7 +139,7 @@ var makeCall = function () {
     return;
   }
   //otherwise get pets
-  console.log('from cache');
+  // console.log('from cache');
   getPets
 };
 
@@ -147,4 +151,4 @@ btn.addEventListener('click', makeCall, false);
 
 
 
-// id = "petfinderbtn";
+ 
