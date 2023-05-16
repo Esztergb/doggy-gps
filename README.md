@@ -42,7 +42,7 @@ List the ready features here:
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![Example screenshot](/assets/images/screenshot.png)
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 

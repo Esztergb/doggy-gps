@@ -64,8 +64,6 @@ testButton.on("click", function () {
 //global variable
 var petFinderKey = 'QaOqLcHGMYNgd5ddmdUhthfFZekvbZPavh5KvIA7RrTJkIgte4';
 var petFinderSecret = 'dEZHQIWOMk1oIJKVrgjqkbDgY7VNZJQx5wXIGSnf';
-var type = "dog";
-var availability = "adoptable";
 var token, tokenType, expires;
 var btn = document.querySelector("#petfinderbtn");
 
@@ -100,6 +98,8 @@ var getOAuth = function () {
 
 
 //Second API call = get OAuth credentials
+var type = "dog";
+var availability = "adoptable";
 
 var getPets = function () {
   return fetch("https://api.petfinder.com/v2/animals?type=" + type + "&status=" + availability, {
@@ -117,7 +117,7 @@ var getPets = function () {
 
     console.log('ap2 pets', data);
     var adoptableContainer = document.querySelector('#adoptable')
-    var petArr = data.animals.filter(data => data.gender.includes("Female"));
+    var petArr = data.animals.filter(data => data.breeds.primary.includes("Terrier"));
     console.log(petArr)
     petArr.forEach(data => {
       var div = document.createElement('div');
