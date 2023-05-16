@@ -1,16 +1,3 @@
-//Initialization: You must initialize the select element as shown below. In addition, you will need a separate call for any dynamically generated select elements your page generates.
-// document.addEventListener("DOMContentLoaded", function () {
-//   var elems = document.querySelectorAll("select");
-//   var instances = M.FormSelect.init(elems, options);
-// });
-
-// Or with jQuery
-
-$(document).ready(function () {
-  $("select").formSelect();
-});
-
-
 //================first API - Ninja API Call=========================================
 //Code Ninjas API key: C5lDHrdwlk1HHbRJNwSU5w==txzH0pzoH7aGus9J
 //Sample Request URL: https://api.api-ninjas.com/v1/dogs?name=
@@ -24,7 +11,7 @@ var testButton = $("#testBtn");
 testButton.on("click", function () {
   var dogName = userInput.val();
 
-//ninja-api
+  //ninja-api
   $.ajax({
     method: "GET",
     url: "https://api.api-ninjas.com/v1/dogs?name=" + dogName,
@@ -46,22 +33,22 @@ testButton.on("click", function () {
 
       //print searched dog attribute
       console.log('image', result[0].image_link);
-        var attOne = document.getElementById("att1");
-        var attTwo = document.getElementById("att2");
-        var attThree = document.getElementById("att3");
-        var attFour = document.getElementById("att4");
-        attOne.textContent = result[0].barking;
-        attTwo.textContent = result[0].energy;
-        attThree.textContent = result[0].shedding;
-        attFour.textContent = result[0].trainability;
+      var attOne = document.getElementById("att1");
+      var attTwo = document.getElementById("att2");
+      var attThree = document.getElementById("att3");
+      var attFour = document.getElementById("att4");
+      attOne.textContent = result[0].barking;
+      attTwo.textContent = result[0].energy;
+      attThree.textContent = result[0].shedding;
+      attFour.textContent = result[0].trainability;
 
-        //store dog name for 2nd api
-        localStorage.setItem("Dog name", result[0].name);
+      //store dog name for 2nd api
+      localStorage.setItem("Dog name", result[0].name);
 
-        //test storage
-        var api2Search = document.querySelector("#adoptionInput");
-        api2Search.value = localStorage.getItem("Dog name");
-        localStorage.getItem
+      //test storage
+      var api2Search = document.querySelector("#adoptionInput");
+      api2Search.value = localStorage.getItem("Dog name");
+      localStorage.getItem
     },
     error: function ajaxError(jqXHR) {
       console.error("Error: ", jqXHR.responseText);
@@ -71,14 +58,8 @@ testButton.on("click", function () {
 // console.log("ls Dog name: ",localStorage.getItem("Dog name"))
 // var api2Search = document.querySelector("#test");
 // api2Search.textContent = localStorage.getItem("Dog name");
+
 //==================Second API - Petfinder API Call=====================
-//GET https: //api.petfinder.com/v2/{CATEGORY}/{ACTION}?{parameter_1}={value_1}&{parameter_2}={value_2}
-//https://api.petfinder.com/v2/animals?type=dog&page=2
-
-//api.petfinder.com/v2/types/{type}/breeds
-//GET https://api.petfinder.com/v2/{CATEGORY}/{ACTION}?{parameter_1}={value_1}&{parameter_2}={value_2}
-
-
 //Getting the Oauth token with Petfinder API
 //global variable
 var petFinderKey = 'QaOqLcHGMYNgd5ddmdUhthfFZekvbZPavh5KvIA7RrTJkIgte4';
@@ -135,6 +116,17 @@ var getPets = function () {
     // Log the pet data
 
     console.log('ap2 pets', data);
+    var adoptableContainer = document.querySelector('#adoptable')
+    var petArr = data.animals.filter(data => data.gender.includes("Female"));
+    console.log(petArr)
+    petArr.forEach(data => {
+      var div = document.createElement('div');
+      var dogContact = document.createElement('h5');
+      // div.classList = 'card'
+      dogContact.innerText = `Contact: ${data.contact.email}`
+      div.appendChild(dogContact);
+      adoptableContainer.appendChild(div);
+    })
 
   }).catch(function (err) {
     //log any errors
@@ -165,4 +157,4 @@ btn.addEventListener('click', makeCall, false);
 
 
 
- 
+
