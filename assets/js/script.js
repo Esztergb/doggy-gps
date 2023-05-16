@@ -20,9 +20,11 @@ var testButton = $("#testBtn");
 
 // var createEl = $("#appendImg").append("<image src='./assets/images/placeholder.jpg' id='dogImg' class='dog-image'></image>");
 
+//search dog button
 testButton.on("click", function () {
   var dogName = userInput.val();
 
+//ninja-api
   $.ajax({
     method: "GET",
     url: "https://api.api-ninjas.com/v1/dogs?name=" + dogName,
@@ -30,16 +32,19 @@ testButton.on("click", function () {
     contentType: "application/json",
     success: function (result) {
       console.log(result);
-
+      //print searched dog name on page
       var dogBreedName = document.querySelector("h3");
       dogBreedName.textContent = result[0].name;
-      dogBreedName.setAttribute("name", dogBreedName)
+      dogBreedName.setAttribute("name", dogBreedName);
 
+      //print searched dog image from api on page
       var dogImage = document.querySelector("#dogImg");
       dogImgLink = result[0].image_link;
-      // var createEl = $("#appendImg").append(`<image src=${dogImage} id='dogImg' class='dog-image'></image>`);
-      dogImage.setAttribute("src", dogImgLink)
 
+      // var createEl = $("#appendImg").append(`<image src=${dogImage} id='dogImg' class='dog-image'></image>`);
+      dogImage.setAttribute("src", dogImgLink);
+
+      //print searched dog attribute
       console.log('image', result[0].image_link);
         var attOne = document.getElementById("att1");
         var attTwo = document.getElementById("att2");
@@ -49,14 +54,23 @@ testButton.on("click", function () {
         attTwo.textContent = result[0].energy;
         attThree.textContent = result[0].shedding;
         attFour.textContent = result[0].trainability;
+
+        //store dog name for 2nd api
+        localStorage.setItem("Dog name", result[0].name);
+
+        //test storage
+        var api2Search = document.querySelector("#adoptionInput");
+        api2Search.value = localStorage.getItem("Dog name");
+        localStorage.getItem
     },
     error: function ajaxError(jqXHR) {
       console.error("Error: ", jqXHR.responseText);
     },
   });
 })
-
-
+// console.log("ls Dog name: ",localStorage.getItem("Dog name"))
+// var api2Search = document.querySelector("#test");
+// api2Search.textContent = localStorage.getItem("Dog name");
 //==================Second API - Petfinder API Call=====================
 //GET https: //api.petfinder.com/v2/{CATEGORY}/{ACTION}?{parameter_1}={value_1}&{parameter_2}={value_2}
 //https://api.petfinder.com/v2/animals?type=dog&page=2
@@ -120,7 +134,7 @@ var getPets = function () {
   }).then(function (data) {
     // Log the pet data
 
-    console.log('pets', data);
+    console.log('ap2 pets', data);
 
   }).catch(function (err) {
     //log any errors
