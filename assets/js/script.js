@@ -168,11 +168,12 @@ btn.addEventListener("click", function () {
 
       console.log("status code", resp.status);
       var resultsCode = document.querySelector("#error-message");
-      if (resp.status === 400) {
-        resultsCode.textContent = "No Results. :(";
-      } else {
-        resultsCode.textContent = "";
-      }
+
+        if(resp.status === 400) {
+          resultsCode.textContent = "No Results. :(";
+        } else {
+          resultsCode.textContent = "";
+        }
 
       return resp.json();
     })
