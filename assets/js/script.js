@@ -191,7 +191,7 @@ btn.addEventListener("click", function () {
 
         div.classList.add("card", "blue-grey");
         div.innerHTML = `
-          <div class="row valign-wrapper z-depth-4">
+            <div class="row valign-wrapper z-depth-4">
             <div class="col s6">
               <h5>${data.name} (${data.age})</h5>
               <h6 class=text>${data.breeds.primary}</h6>
@@ -224,6 +224,7 @@ btn.addEventListener("click", function () {
                 : "<img class='responsive-img circle' src='./assets/images/no-image-icon-23483.png'/>"
             }
             </div>
+          </div>
           </div>
         `;
         results.appendChild(div);
