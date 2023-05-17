@@ -221,7 +221,7 @@ btn.addEventListener("click", function () {
             ${
               data.primary_photo_cropped
                 ? `<img class="responsive-img circle" src="${data.primary_photo_cropped.small}"/>`
-                : ""
+                : "<img class='responsive-img circle' src='./assets/images/no-image-icon-23483.png'/>"
             }
             </div>
           </div>
