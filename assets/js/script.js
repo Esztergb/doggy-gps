@@ -130,6 +130,7 @@ var getPets = function () {
         <div class="row">
           <div class="col s6">
             <h5>${data.name} (${data.age})</h5>
+            <h6>${data.gender}</h6>
             <h6 class=text>${data.breeds.primary}</h6>
             <p>${data.contact.address.address1} ${data.contact.address.city} ${data.contact.address.state} ${data.contact.address.postcode}</p>
             <ul class="list-group">
@@ -138,9 +139,8 @@ var getPets = function () {
             <li class=list-groiup-item>Shelter ID: ${data.organization_id}</li>
           </div>
           <div class="col s6">
-          <img class="" src="${data.primary_photo_cropped}">
+          <img class="" src="${data.primary_photo_cropped.small}">
           </div>
-
         </div>
       `;
       results.appendChild(div);
