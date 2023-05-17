@@ -148,7 +148,7 @@ var getPets = function () {
             <li class=list-groiup-item>Shelter ID: ${data.organization_id}</li>
           </div>
           <div class="col s6">
-          <img class="" src="${data.primary_photo_cropped}">
+          <img class="" src="${data.primary_photo_cropped.small}">
           </div>
 
         </div>
