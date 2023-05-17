@@ -17,6 +17,7 @@ $(document).ready(function () {
 
 var userInput = $("#searchInput");
 var testButton = $("#testBtn");
+var userInputDos = $("#adoptionInput") 
 
 // var createEl = $("#appendImg").append("<image src='./assets/images/placeholder.jpg' id='dogImg' class='dog-image'></image>");
 
@@ -56,7 +57,7 @@ testButton.on("click", function () {
         attFour.textContent = result[0].trainability;
 
         //store dog name for 2nd api
-        localStorage.setItem("Dog name", result[0].name);
+        localStorage.setItem("Dog name", dogName);
 
         //test storage
         var api2Search = document.querySelector("#adoptionInput");
@@ -158,7 +159,30 @@ var makeCall = function () {
 };
 
 makeCall();
-btn.addEventListener('click', makeCall, false);
+btn.addEventListener('click', function() {
+  makeCall(), false;
+  var dogBreedDos = userInputDos.val();
+    return fetch("https://api.petfinder.com/v2/animals?type=" + type + "&breed=" + dogBreedDos + "&location=ca" + "&status=" + availability + "&limit=50", {
+      headers: {
+        Authorization: tokenType + " " + token,
+        "Content-Type": "application/x-www-form-urlencoded",
+      }
+  
+    }).then(function (resp) {
+      // Return the API response as JSON
+      return resp.json();
+  
+    }).then(function (data) {
+      // Log the pet data
+  
+      console.log('api2 pets', data);
+  
+    }).catch(function (err) {
+      //log any errors
+      console.log('something went wrong', err);
+    });
+  
+  });
 
 
 
