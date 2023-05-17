@@ -148,18 +148,12 @@ var getPets = function () {
             <li class=list-groiup-item>Shelter ID: ${data.organization_id}</li>
           </div>
           <div class="col s6">
-          <img class="" src="${data.primary_photo_cropped}">
+          <img class="" src="${data.primary_photo_cropped.small}">
           </div>
 
         </div>
       `;
       results.appendChild(div);
-
-
-
-
-
-
     // var adoptableContainer = document.querySelector('#adoptable')
     // var petArr = data.animals.filter(data => data.breeds.primary.includes("Terrier"));
     // console.log(petArr)
