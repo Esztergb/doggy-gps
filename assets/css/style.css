@@ -72,7 +72,7 @@ body{
     height: 400px; /*remove ones design finalized*/
 } 
 
-#secondrow, #thirdrow, .cardone, .cardtwo{
+#secondrow, .cardone, .cardtwo{
     height: 230px; /*remove ones design finalized */
     
 }
