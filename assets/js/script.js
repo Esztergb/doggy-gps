@@ -44,7 +44,7 @@ testButton.on("click", function () {
       attFour.textContent = result[0].trainability;
 
       //store dog name for 2nd api
-      localStorage.setItem("Dog name", result[0].name);
+      localStorage.setItem("Dog name", dogName);
 
       //test storage
       var api2Search = document.querySelector("#adoptionInput");
@@ -116,47 +116,47 @@ var getPets = function () {
   }).then(function (data) {
     // Log the pet data
 
-    console.log('ap2 pets', data);
-    var results = document.querySelector("#results");
+    // console.log('ap2 pets', data);
+    // var results = document.querySelector("#results");
     //clear first
     // results.innerHTML = "";
-    var petArr = data.animals.filter(data => data.breeds.primary);
-    console.log(petArr)
+    // var petArr = data.animals.filter(data => data.breeds.primary);
+    // console.log(petArr)
     
-    petArr.forEach(data => {
-      var div = document.createElement('div');
+    // petArr.forEach(data => {
+    //   var div = document.createElement('div');
       
-      div.classList.add('card', 'blue-grey');
-      div.innerHTML = `
-        <div class="row">
-          <div class="col s6">
-            <h5>${data.name} (${data.age})</h5>
-            <h6 class=text>${data.breeds.primary}</h6>
-            <h6>${data.gender}</h6>
-            <p>${data.contact.address.address1} ${data.contact.address.city} ${
-        data.contact.address.state
-      } ${data.contact.address.postcode}</p>
-            <ul class="list-group">
-            ${
-              data.contact.phone
-                ? `<li class=list-groiup-item>Phone: ${data.contact.phone}</li>`
-                : ``
-            }
-            ${
-              data.contact.email
-                ? `<li class=list-groiup-item>Email: ${data.contact.email}</li>`
-                : ``
-            }
-            <li class=list-groiup-item>Shelter ID: ${data.organization_id}</li>
-          </div>
-          <div class="col s6">
-          <img class="responsive-img circle" src="${
-            data.primary_photo_cropped.small
-          }">
-          </div>
-        </div>
-      `;
-      results.appendChild(div);
+    //   div.classList.add('card', 'blue-grey');
+    //   div.innerHTML = `
+    //     <div class="row">
+    //       <div class="col s6">
+    //         <h5>${data.name} (${data.age})</h5>
+    //         <h6 class=text>${data.breeds.primary}</h6>
+    //         <h6>${data.gender}</h6>
+    //         <p>${data.contact.address.address1} ${data.contact.address.city} ${
+    //     data.contact.address.state
+    //   } ${data.contact.address.postcode}</p>
+    //         <ul class="list-group">
+    //         ${
+    //           data.contact.phone
+    //             ? `<li class=list-groiup-item>Phone: ${data.contact.phone}</li>`
+    //             : ``
+    //         }
+    //         ${
+    //           data.contact.email
+    //             ? `<li class=list-groiup-item>Email: ${data.contact.email}</li>`
+    //             : ``
+    //         }
+    //         <li class=list-groiup-item>Shelter ID: ${data.organization_id}</li>
+    //       </div>
+    //       <div class="col s6">
+    //       <img class="responsive-img circle" src="${
+    //         data.primary_photo_cropped.small
+    //       }">
+    //       </div>
+    //     </div>
+    //   `;
+    //   results.appendChild(div);
     // var adoptableContainer = document.querySelector('#adoptable')
     // var petArr = data.animals.filter(data => data.breeds.primary.includes("Terrier"));
     // console.log(petArr)
@@ -167,7 +167,7 @@ var getPets = function () {
     //   dogContact.innerText = `Contact: ${data.contact.email}`
     //   div.appendChild(dogContact);
     //   adoptableContainer.appendChild(div);
-     })
+    //  })
 
   }).catch(function (err) {
     //log any errors
@@ -192,9 +192,11 @@ var makeCall = function () {
 
 makeCall();
 btn.addEventListener('click', function() {
-  makeCall(), false;
-  var dogBreedDos = userInputDos.val();
-    return fetch("https://api.petfinder.com/v2/animals?type=" + type + "&breed=" + dogBreedDos + "&location=ca" + "&status=" + availability + "&limit=50", {
+  makeCall(), false; 
+
+    var dogBreedDos = userInputDos.val()
+
+    return fetch("https://api.petfinder.com/v2/animals?type=" + type + "&breed=" + dogBreedDos + "&status=" + availability + "&limit=50", {
       headers: {
         Authorization: tokenType + " " + token,
         "Content-Type": "application/x-www-form-urlencoded",
@@ -208,12 +210,62 @@ btn.addEventListener('click', function() {
       // Log the pet data
   
       console.log('api2 pets', data);
+      var results = document.querySelector("#results");
+      //clear first
+      results.innerHTML = "";
+      var petArr = data.animals.filter(data => data.breeds.primary);
+      console.log(petArr)
+      
+      petArr.forEach(data => {
+        var div = document.createElement('div');
+        
+        div.classList.add('card', 'blue-grey');
+        div.innerHTML = `
+          <div class="row">
+            <div class="col s6">
+              <h5>${data.name} (${data.age})</h5>
+              <h6 class=text>${data.breeds.primary}</h6>
+              <h6>${data.gender}</h6>
+              <p>${data.contact.address.address1} ${data.contact.address.city} ${
+          data.contact.address.state
+        } ${data.contact.address.postcode}</p>
+              <ul class="list-group">
+              ${
+                data.contact.phone
+                  ? `<li class=list-groiup-item>Phone: ${data.contact.phone}</li>`
+                  : ``
+              }
+              ${
+                data.contact.email
+                  ? `<li class=list-groiup-item>Email: ${data.contact.email}</li>`
+                  : ``
+              }
+              <li class=list-groiup-item>Shelter ID: ${data.organization_id}</li>
+            </div>
+            <div class="col s6">
+            <img class="responsive-img circle" src="${
+              data.primary_photo_cropped.small
+            }">
+            </div>
+          </div>
+        `;
+        results.appendChild(div);
+      // var adoptableContainer = document.querySelector('#adoptable')
+      // var petArr = data.animals.filter(data => data.breeds.primary.includes("Terrier"));
+      // console.log(petArr)
+      // petArr.forEach(data => {
+      //   var div = document.createElement('div');
+      //   var dogContact = document.createElement('h5');
+      //   // div.classList = 'card'
+      //   dogContact.innerText = `Contact: ${data.contact.email}`
+      //   div.appendChild(dogContact);
+      //   adoptableContainer.appendChild(div);
+       })
   
     }).catch(function (err) {
       //log any errors
       console.log('something went wrong', err);
     });
-  
   });
 
 
