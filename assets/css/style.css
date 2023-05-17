@@ -62,7 +62,7 @@ body{
     justify-content: center;
 }
 
-#adoptable{
+#adoptable, #error-message{
     color: var(--dark-brown);
 }
 #firstrow, #secondrow, #thirdrow{

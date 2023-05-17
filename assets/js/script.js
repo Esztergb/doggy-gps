@@ -146,6 +146,15 @@ btn.addEventListener('click', function() {
   
     }).then(function (resp) {
       // Return the API response as JSON
+
+      console.log("status code", resp.status);
+      var resultsCode = document.querySelector("#error-message");
+        if(resp.status === 400) {
+          resultsCode.textContent = "No Results. :(";
+        } else {
+          resultsCode.textContent = "";
+        }
+
       return resp.json();
   
     }).then(function (data) {
