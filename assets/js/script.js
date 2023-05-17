@@ -116,17 +116,61 @@ var getPets = function () {
     // Log the pet data
 
     console.log('ap2 pets', data);
-    var adoptableContainer = document.querySelector('#adoptable')
-    var petArr = data.animals.filter(data => data.breeds.primary.includes("Terrier"));
+    var results = document.querySelector("#results");
+    //clear first
+    // results.innerHTML = "";
+    var petArr = data.animals.filter(data => data.breeds.primary);
     console.log(petArr)
+    
     petArr.forEach(data => {
       var div = document.createElement('div');
-      var dogContact = document.createElement('h5');
-      // div.classList = 'card'
-      dogContact.innerText = `Contact: ${data.contact.email}`
-      div.appendChild(dogContact);
-      adoptableContainer.appendChild(div);
-    })
+      
+      div.classList.add('card', 'blue-grey');
+      div.innerHTML = `
+        <div class="row">
+          <div class="col s6">
+            <h5>${data.name} (${data.age})</h5>
+            <h6 class=text>${data.breeds.primary}</h6>
+            <p>${data.contact.address.address1} ${data.contact.address.city} ${
+        data.contact.address.state
+      } ${data.contact.address.postcode}</p>
+            <ul class="list-group">
+            ${
+              data.contact.phone
+                ? `<li class=list-groiup-item>Phone: ${data.contact.phone}</li>`
+                : ``
+            }
+            ${
+              data.contact.email
+                ? `<li class=list-groiup-item>Email: ${data.contact.email}</li>`
+                : ``
+            }
+            <li class=list-groiup-item>Shelter ID: ${data.organization_id}</li>
+          </div>
+          <div class="col s6">
+          <img class="" src="${data.primary_photo_cropped}">
+          </div>
+
+        </div>
+      `;
+      results.appendChild(div);
+
+
+
+
+
+
+    // var adoptableContainer = document.querySelector('#adoptable')
+    // var petArr = data.animals.filter(data => data.breeds.primary.includes("Terrier"));
+    // console.log(petArr)
+    // petArr.forEach(data => {
+    //   var div = document.createElement('div');
+    //   var dogContact = document.createElement('h5');
+    //   // div.classList = 'card'
+    //   dogContact.innerText = `Contact: ${data.contact.email}`
+    //   div.appendChild(dogContact);
+    //   adoptableContainer.appendChild(div);
+     })
 
   }).catch(function (err) {
     //log any errors
