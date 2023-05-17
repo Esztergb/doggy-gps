@@ -6,8 +6,6 @@ var userInput = $("#searchInput");
 var testButton = $("#testBtn");
 var userInputDos = $("#adoptionInput") 
 
-// var createEl = $("#appendImg").append("<image src='./assets/images/placeholder.jpg' id='dogImg' class='dog-image'></image>");
-
 //search dog button
 testButton.on("click", function () {
   var dogName = userInput.val();
@@ -29,7 +27,6 @@ testButton.on("click", function () {
       var dogImage = document.querySelector("#dogImg");
       dogImgLink = result[0].image_link;
 
-      // var createEl = $("#appendImg").append(`<image src=${dogImage} id='dogImg' class='dog-image'></image>`);
       dogImage.setAttribute("src", dogImgLink);
 
       //print searched dog attribute
@@ -56,9 +53,7 @@ testButton.on("click", function () {
     },
   });
 })
-// console.log("ls Dog name: ",localStorage.getItem("Dog name"))
-// var api2Search = document.querySelector("#test");
-// api2Search.textContent = localStorage.getItem("Dog name");
+
 
 //==================Second API - Petfinder API Call=====================
 //Getting the Oauth token with Petfinder API
@@ -115,60 +110,7 @@ var getPets = function () {
 
   }).then(function (data) {
     // Log the pet data
-
-    // console.log('ap2 pets', data);
-    // var results = document.querySelector("#results");
-    //clear first
-    // results.innerHTML = "";
-    // var petArr = data.animals.filter(data => data.breeds.primary);
-    // console.log(petArr)
     
-    // petArr.forEach(data => {
-    //   var div = document.createElement('div');
-      
-    //   div.classList.add('card', 'blue-grey');
-    //   div.innerHTML = `
-    //     <div class="row">
-    //       <div class="col s6">
-    //         <h5>${data.name} (${data.age})</h5>
-    //         <h6 class=text>${data.breeds.primary}</h6>
-    //         <h6>${data.gender}</h6>
-    //         <p>${data.contact.address.address1} ${data.contact.address.city} ${
-    //     data.contact.address.state
-    //   } ${data.contact.address.postcode}</p>
-    //         <ul class="list-group">
-    //         ${
-    //           data.contact.phone
-    //             ? `<li class=list-groiup-item>Phone: ${data.contact.phone}</li>`
-    //             : ``
-    //         }
-    //         ${
-    //           data.contact.email
-    //             ? `<li class=list-groiup-item>Email: ${data.contact.email}</li>`
-    //             : ``
-    //         }
-    //         <li class=list-groiup-item>Shelter ID: ${data.organization_id}</li>
-    //       </div>
-    //       <div class="col s6">
-    //       <img class="responsive-img circle" src="${
-    //         data.primary_photo_cropped.small
-    //       }">
-    //       </div>
-    //     </div>
-    //   `;
-    //   results.appendChild(div);
-    // var adoptableContainer = document.querySelector('#adoptable')
-    // var petArr = data.animals.filter(data => data.breeds.primary.includes("Terrier"));
-    // console.log(petArr)
-    // petArr.forEach(data => {
-    //   var div = document.createElement('div');
-    //   var dogContact = document.createElement('h5');
-    //   // div.classList = 'card'
-    //   dogContact.innerText = `Contact: ${data.contact.email}`
-    //   div.appendChild(dogContact);
-    //   adoptableContainer.appendChild(div);
-    //  })
-
   }).catch(function (err) {
     //log any errors
     console.log('something went wrong', err);
@@ -221,14 +163,19 @@ btn.addEventListener('click', function() {
         
         div.classList.add('card', 'blue-grey');
         div.innerHTML = `
-          <div class="row">
+          <div class="row valign-wrapper">
             <div class="col s6">
               <h5>${data.name} (${data.age})</h5>
               <h6 class=text>${data.breeds.primary}</h6>
               <h6>${data.gender}</h6>
-              <p>${data.contact.address.address1} ${data.contact.address.city} ${
-          data.contact.address.state
-        } ${data.contact.address.postcode}</p>
+              ${
+                data.contact.address.address1
+                  ? `<p>${data.contact.address.address1}</p>`
+                  : ``
+              }
+              <p>${data.contact.address.city} ${data.contact.address.state} ${
+          data.contact.address.postcode
+        }</p>
               <ul class="list-group">
               ${
                 data.contact.phone
@@ -240,7 +187,9 @@ btn.addEventListener('click', function() {
                   ? `<li class=list-groiup-item>Email: ${data.contact.email}</li>`
                   : ``
               }
-              <li class=list-groiup-item>Shelter ID: ${data.organization_id}</li>
+              <li class=list-groiup-item>Shelter ID: ${
+                data.organization_id
+              }</li>
             </div>
             <div class="col s6">
             <img class="responsive-img circle" src="${
@@ -250,16 +199,7 @@ btn.addEventListener('click', function() {
           </div>
         `;
         results.appendChild(div);
-      // var adoptableContainer = document.querySelector('#adoptable')
-      // var petArr = data.animals.filter(data => data.breeds.primary.includes("Terrier"));
-      // console.log(petArr)
-      // petArr.forEach(data => {
-      //   var div = document.createElement('div');
-      //   var dogContact = document.createElement('h5');
-      //   // div.classList = 'card'
-      //   dogContact.innerText = `Contact: ${data.contact.email}`
-      //   div.appendChild(dogContact);
-      //   adoptableContainer.appendChild(div);
+      
        })
   
     }).catch(function (err) {
