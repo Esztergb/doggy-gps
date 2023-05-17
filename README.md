@@ -36,9 +36,9 @@ This app was created for anyone looking for a furry friend in their life.  It wa
 
 ## Features
 List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
+- When searching for a specific dog, there are a list of attributes to give a brief description on what it is like to care for the searched dog.
+- The site then searches for a breed and a shelter that houses the searched dog.
+- Contact information is included as well as pictures of adoptable dogs.
 
 
 ## Screenshots
@@ -79,13 +79,13 @@ To do:
 
 ## Acknowledgements
 Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
+- This project was inspired by us dog lovers.
+- Many thanks to Micheal, Nirav and Julius.
 
 
 ## Contact
 Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Carter Pang(carter@pangweb.com), Kristine Kim(kristinehkim@gmail.com), Eszter(Eszterbarbuscia@gmail.com), Jed Smith(smith.jed.p@gmail.com)
 
 
 <!-- Optional -->
