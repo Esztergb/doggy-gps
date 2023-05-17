@@ -131,24 +131,14 @@ var getPets = function () {
           <div class="col s6">
             <h5>${data.name} (${data.age})</h5>
             <h6 class=text>${data.breeds.primary}</h6>
-            <p>${data.contact.address.address1} ${data.contact.address.city} ${
-        data.contact.address.state
-      } ${data.contact.address.postcode}</p>
+            <p>${data.contact.address.address1} ${data.contact.address.city} ${data.contact.address.state} ${data.contact.address.postcode}</p>
             <ul class="list-group">
-            ${
-              data.contact.phone
-                ? `<li class=list-groiup-item>Phone: ${data.contact.phone}</li>`
-                : ``
-            }
-            ${
-              data.contact.email
-                ? `<li class=list-groiup-item>Email: ${data.contact.email}</li>`
-                : ``
-            }
+            ${data.contact.phone ? `<li class=list-groiup-item>Phone: ${data.contact.phone}</li>` : ``}
+            ${data.contact.email ? `<li class=list-groiup-item>Email: ${data.contact.email}</li>` : ``}
             <li class=list-groiup-item>Shelter ID: ${data.organization_id}</li>
           </div>
           <div class="col s6">
-          <img class="" src="${data.primary_photo_cropped.small}">
+          <img class="" src="${data.primary_photo_cropped}">
           </div>
 
         </div>
