@@ -163,7 +163,7 @@ btn.addEventListener('click', function() {
         
         div.classList.add('card', 'blue-grey');
         div.innerHTML = `
-          <div class="row valign-wrapper">
+          <div class="row valign-wrapper z-depth-4">
             <div class="col s6">
               <h5>${data.name} (${data.age})</h5>
               <h6 class=text>${data.breeds.primary}</h6>
@@ -174,20 +174,20 @@ btn.addEventListener('click', function() {
                   : ``
               }
               <p>${data.contact.address.city} ${data.contact.address.state} ${
-          data.contact.address.postcode
-        }</p>
-              <ul class="list-group">
+                data.contact.address.postcode
+              }</p>
+              <ul class="">
               ${
                 data.contact.phone
-                  ? `<li class=list-groiup-item>Phone: ${data.contact.phone}</li>`
+                  ? `<li class="">Phone: ${data.contact.phone}</li>`
                   : ``
               }
               ${
                 data.contact.email
-                  ? `<li class=list-groiup-item>Email: ${data.contact.email}</li>`
+                  ? `<li class="">Email: ${data.contact.email}</li>`
                   : ``
               }
-              <li class=list-groiup-item>Shelter ID: ${
+              <li class="">Shelter ID: ${
                 data.organization_id
               }</li>
             </div>
