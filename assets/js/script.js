@@ -30,7 +30,7 @@ testButton.on("click", function () {
       dogImage.setAttribute("src", dogImgLink);
 
       //print searched dog attribute
-      console.log("image", result[0].image_link);
+      // console.log("image", result[0].image_link);
       var attOne = document.getElementById("att1");
       var attTwo = document.getElementById("att2");
       var attThree = document.getElementById("att3");
@@ -56,7 +56,7 @@ testButton.on("click", function () {
 
 //==================Second API - Petfinder API Call=====================
 //Getting the Oauth token with Petfinder API
-//global variable
+
 var petFinderKey = "QaOqLcHGMYNgd5ddmdUhthfFZekvbZPavh5KvIA7RrTJkIgte4";
 var petFinderSecret = "dEZHQIWOMk1oIJKVrgjqkbDgY7VNZJQx5wXIGSnf";
 var token, tokenType, expires;
@@ -127,9 +127,9 @@ var getPets = function () {
 
 //check to see if our token has expired = check to see if expires has a value, If it does, we’ll subtract the current Unix timesteamp (new Date().getTime()) from it. If the resulting number is less than 1, the token has expired.
 var makeCall = function () {
-  //if current token in invalid, get a new one
+  //if current token is invalid, get a new one
   if (!expires || expires - new Date().getTime() < 1) {
-    console.log("new call");
+    // console.log("new call");
     getOAuth().then(function () {
       getPets();
     });
@@ -145,8 +145,8 @@ btn.addEventListener("click", function () {
   makeCall(), false;
 
   var dogBreedDos = userInputDos.val();
-  var type = "dog";
-  var availability = "adoptable";
+  // var type = "dog";
+  // var availability = "adoptable";
 
   return fetch(
     "https://api.petfinder.com/v2/animals?type=" +
@@ -164,9 +164,8 @@ btn.addEventListener("click", function () {
     }
   )
     .then(function (resp) {
-      // Return the API response as JSON
-
-      console.log("status code", resp.status);
+      //handle 400 errors
+      // console.log("status code", resp.status);
       var resultsCode = document.querySelector("#error-message");
         if(resp.status === 400) {
           resultsCode.textContent = "No Results. :(";
@@ -179,10 +178,11 @@ btn.addEventListener("click", function () {
     .then(function (data) {
       // Log the pet data
 
-      console.log("api2 pets", data);
+      // console.log("api2 pets", data);
       var results = document.querySelector("#results");
-      //clear first
+      //clear innerHTML first
       results.innerHTML = "";
+      
       var petArr = data.animals.filter((data) => data.breeds.primary);
       console.log(petArr);
 
@@ -202,8 +202,8 @@ btn.addEventListener("click", function () {
                   : ``
               }
               <p>${data.contact.address.city} ${data.contact.address.state} ${
-          data.contact.address.postcode
-        }</p>
+                data.contact.address.postcode
+              }</p>
               <ul class="">
               ${
                 data.contact.phone
@@ -217,12 +217,13 @@ btn.addEventListener("click", function () {
               }
               <li class="">Shelter ID: ${data.organization_id}</li>
             </div>
+            
             <div class="col s6">
-            ${
-              data.primary_photo_cropped
-                ? `<img class="responsive-img circle" src="${data.primary_photo_cropped.small}"/>`
-                : "<img class='responsive-img circle' src='./assets/images/no-image-icon-23483.png'/>"
-            }
+              ${
+                data.primary_photo_cropped
+                  ? `<img class="responsive-img circle" src="${data.primary_photo_cropped.small}"/>`
+                  : "<img class='responsive-img circle' src='./assets/images/no-image-icon-23483.png'/>"
+              }
             </div>
           </div>
           </div>
