@@ -16,7 +16,7 @@
 
 
 ## General Information
-Users will be presented with a homepage to click on in order to start searching for dog breeds they are interested in.  Once on the search page, the user will be able to search any dog breed, and a list of attributes will be displayed for that particular dog: barking, energy, shedding, trainability which are all rated on a scale of 1-5.  As soon as the user inputs a breed to search, it will immediately reveal in the search input below to find available dogs of that breed to adopt.
+Users will be presented with a homepage and will need to click on "FIND YOUR DOG" button in order to start searching for dog breeds they are interested in.  Once on the search page, the user will be able to search any dog breed, and a list of attributes will be displayed for that particular dog: barking, energy, shedding, trainability which are all rated on a scale of 1-5.  As soon as the user inputs a breed to search, it will immediately reveal in the search input below to find available dogs of that breed to adopt.
 
 This app was created for anyone looking for a furry friend in their life.  It was created to make their lives a bit easier by being able to search for the type of dog and available dogs to adopt in one search engine.  Team Pewter City decided to undertake this project because we are all dog lovers.
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
@@ -40,7 +40,7 @@ This app was created for anyone looking for a furry friend in their life.  It wa
 
 
 ## Usage
-The user will need to click on the "FIND YOUR DOG" button on the homepage and will bring them to the search page.  There the user will type in a dog breed and a list of attributes will display.  If interested in that breed, it will immediately show in the search below to find available dogs to adopt.
+The user will need to click on the "FIND YOUR DOG" button on the homepage and it will bring them to the search page.  There the user will type in a dog breed and a list of attributes will display.  If interested in that breed, it will immediately show in the search below to find available dogs to adopt.
 
 
 ## Project Status
