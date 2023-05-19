@@ -1,3 +1,16 @@
+//below code will initialize the navbar plugin (it will change the navbar to hamburger icon for mobile size).
+
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".sidenav");
+  var instances = M.Sidenav.init(elems, options);
+});
+
+// Or with jQuery
+
+$(document).ready(function () {
+  $(".sidenav").sidenav();
+});
+
 //================first API - Ninja API Call=========================================
 //Code Ninjas API key: C5lDHrdwlk1HHbRJNwSU5w==txzH0pzoH7aGus9J
 //Sample Request URL: https://api.api-ninjas.com/v1/dogs?name=
@@ -167,11 +180,11 @@ btn.addEventListener("click", function () {
       //handle 400 errors
       // console.log("status code", resp.status);
       var resultsCode = document.querySelector("#error-message");
-        if(resp.status === 400) {
-          resultsCode.textContent = "No Results. :(";
-        } else {
-          resultsCode.textContent = "";
-        }
+      if (resp.status === 400) {
+        resultsCode.textContent = "No Results. :(";
+      } else {
+        resultsCode.textContent = "";
+      }
 
       return resp.json();
     })
@@ -182,7 +195,7 @@ btn.addEventListener("click", function () {
       var results = document.querySelector("#results");
       //clear innerHTML first
       results.innerHTML = "";
-      
+
       var petArr = data.animals.filter((data) => data.breeds.primary);
       console.log(petArr);
 
@@ -202,8 +215,8 @@ btn.addEventListener("click", function () {
                   : ``
               }
               <p>${data.contact.address.city} ${data.contact.address.state} ${
-                data.contact.address.postcode
-              }</p>
+          data.contact.address.postcode
+        }</p>
               <ul class="">
               ${
                 data.contact.phone
